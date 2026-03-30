@@ -34,6 +34,7 @@ Go言語の基本構文を問題形式で学ぶチュートリアルリポジト
 | 19  | [sync.Mutex](exercises/19-mutex/)               | データ競合の防止、Race Detector      |
 | 20  | [context](exercises/20-context/)                | キャンセル、タイムアウト、親子伝搬   |
 | 21  | [パイプライン](exercises/21-pipeline/)          | ステージの直列接続、チャネル方向指定 |
+| 22  | [WebAssembly](exercises/22-wasm/)               | Wasm ビルド、`syscall/js`、JS 連携   |
 
 ## 実行環境
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Go WebAssembly Demo</title>
+</head>
+<body>
+    <h1>Go WebAssembly Demo</h1>
+    <button id="calcBtn">add(3, 5) を実行</button>
+    <p id="result"></p>
+
+    <script src="wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+            .then((result) => {
+                go.run(result.instance);
+            });
+
+        document.getElementById("calcBtn").addEventListener("click", () => {
+            const result = goAdd(3, 5);
+            document.getElementById("result").innerText = "結果: " + result;
+        });
+    </script>
+</body>
+</html>
